@@ -29,19 +29,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: 'Print manual run reason'
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        run: |
-          echo 'Reason: ${{ github.event.inputs.reason }}'
-
       - name: Generate PDF
         id: dotnet-code-metrics
-        uses: grzegorzorwat/cv@main
+        uses: grzegorzorwat/CvToPdfGithubAction@main
         with:
           owner: ${{ github.repository_owner }}
           name: ${{ github.repository }}
           branch: ${{ github.ref }}
-          dir: ${{ './grzegorzorwat/cv' }}
+          dir: ${{ './' }}
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3.4.1

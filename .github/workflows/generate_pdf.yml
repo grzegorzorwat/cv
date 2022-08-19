@@ -31,15 +31,14 @@ jobs:
 
       - name: Create PDF
         id: create-pdf
-        uses: grzegorzorwat/GitHubActions.WebpageToPdf
+        uses: grzegorzorwat/GitHubActions.WebpageToPdf@main
         with:
           address: ${{ https://grzegorzorwat.github.io/cv/ }}
           output: ${{ './pdfs' }}
           file-name: ${{ 'cv' }}
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v3.4.1
-        if: ${{ steps.dotnet-code-metrics.outputs.updated-metrics }} == 'true'
+        uses: peter-evans/create-pull-request@v4
         with:
-          title: '${{ steps.dotnet-code-metrics.outputs.summary-title }}'
-          commit-message: 'Generate PDF.'
+          title: '${{ steps.dotnet-code-metrics.outputs.title }}'
+          commit-message: 'Create PDF.'

@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Generate PDF
+name: Create PDF
 
 # Controls when the workflow will run
 on:
@@ -29,18 +29,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Generate PDF
-        id: dotnet-code-metrics
-        uses: grzegorzorwat/CvToPdfGithubAction@main
+      - name: Create PDF
+        id: create-pdf
+        uses: grzegorzorwat/GitHubActions.WebpageToPdf
         with:
-          owner: ${{ github.repository_owner }}
-          name: ${{ github.repository }}
-          branch: ${{ github.ref }}
-          dir: ${{ './' }}
+          address: ${{ https://grzegorzorwat.github.io/cv/ }}
+          output: ${{ './pdfs' }}
+          file-name: ${{ 'cv' }}
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v3.4.1
-        if: ${{ steps.dotnet-code-metrics.outputs.updated-metrics }} == 'true'
+        uses: peter-evans/create-pull-request@v4
         with:
-          title: '${{ steps.dotnet-code-metrics.outputs.summary-title }}'
-          commit-message: 'Generate PDF.'
+          title: '${{ steps.dotnet-code-metrics.outputs.title }}'
+          commit-message: 'Create PDF.'

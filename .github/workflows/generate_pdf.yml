@@ -33,7 +33,7 @@ jobs:
         id: create-pdf
         uses: grzegorzorwat/GitHubActions.WebpageToPdf@main
         with:
-          address: ${{ https://grzegorzorwat.github.io/cv/ }}
+          address: ${{ 'https://grzegorzorwat.github.io/cv/' }}
           output: ${{ './pdfs' }}
           file-name: ${{ 'cv' }}
 

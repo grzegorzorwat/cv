@@ -40,5 +40,5 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
-          title: '${{ steps.dotnet-code-metrics.outputs.title }}'
+          title: '${{ steps.create-pdf.outputs.title }}'
           commit-message: 'Create PDF.'

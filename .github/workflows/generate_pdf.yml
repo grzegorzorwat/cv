@@ -37,6 +37,7 @@ jobs:
           output: ${{ './pdfs' }}
           file-name: ${{ 'cv.pdf' }}
           append-metadata: true
+          commit: ${{ github.sha }}
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4

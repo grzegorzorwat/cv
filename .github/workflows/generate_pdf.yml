@@ -35,7 +35,8 @@ jobs:
         with:
           address: ${{ 'https://grzegorzorwat.github.io/cv/' }}
           output: ${{ './pdfs' }}
-          file-name: ${{ 'cv' }}
+          file-name: ${{ 'cv.pdf' }}
+          append-metadata: true
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4

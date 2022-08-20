@@ -29,6 +29,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
       - name: Create PDF
         id: create-pdf
         uses: grzegorzorwat/GitHubActions.WebpageToPdf@main
@@ -37,7 +41,7 @@ jobs:
           output: ${{ './pdfs' }}
           file-name: ${{ 'cv.pdf' }}
           append-metadata: true
-          commit: ${{ github.sha }}
+          commit: ${{ steps.vars.outputs.sha_short }}
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4

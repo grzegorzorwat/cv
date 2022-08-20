@@ -42,6 +42,7 @@ jobs:
           file-name: ${{ 'cv.pdf' }}
           append-metadata: true
           commit: ${{ steps.vars.outputs.sha_short }}
+          script-path: ${{ './.github/workflows/script.js' }}
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4

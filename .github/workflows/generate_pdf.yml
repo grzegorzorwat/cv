@@ -5,7 +5,7 @@ name: Create PDF
 # Controls when the workflow will run
 on:
   workflow_run:
-    workflows: ["pages-build-deployment"]
+    workflows: ["Deploy Jekyll with GitHub Pages dependencies preinstalled"]
     types:
       - completed
 
@@ -43,6 +43,7 @@ jobs:
           append-metadata: true
           commit: ${{ steps.vars.outputs.sha_short }}
           script-path: ${{ './.github/workflows/script.js' }}
+          media-type: 'Screen'
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4

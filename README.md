@@ -11,7 +11,7 @@ Software to support document workflow.
   - Implemented distributed system design patterns like inbox, outbox, observability.
   - In modules where it was beneficial, used patterns like CQRS, DDD tactical patterns and Event Sourcing.
   - Tested software with unit tests, integration tests and E2E tests on API level. Used Testcontainers to setup containers for tests and Verify for snapshot testing.
-  - **_Technologies used:_**: .NET 5/6, C#, Dapper, EF Core, IBM MQ, Oracle, PL/SQL, PostgreSQL, Marten as EventStore, REST with HATEOAS, OpenTelemetry, Docker, xUnit, Testcontainers, Verify.
+  - **_Technologies used:_** .NET 5/6, C#, Dapper, EF Core, IBM MQ, Oracle, PL/SQL, PostgreSQL, Marten as EventStore, REST with HATEOAS, OpenTelemetry, Docker, xUnit, Testcontainers, Verify.
 <br><br>
 
 **.NET Software Developer** @ [Apator Rector](https://www.apator.com.pl/en/apator-group/apator-group-companies/apator-rector-sp-z-o-o) <br>

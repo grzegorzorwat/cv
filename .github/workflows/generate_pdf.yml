@@ -43,7 +43,8 @@ jobs:
           append-metadata: true
           commit: ${{ steps.vars.outputs.sha_short }}
           script-path: ${{ './.github/workflows/script.js' }}
-          media-type: 'Screen'
+          css-path: ${{ './.github/workflows/styles.css' }}
+          media-type: 'Print'
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4

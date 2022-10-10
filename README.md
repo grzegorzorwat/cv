@@ -5,7 +5,7 @@ _.NET Software Engineer_
 
 ## 💻 Experience
 
-**.NET Software Developer** @ [COMPENT.IO](http://compent.io/) _(Apr 2021 - Present)_ <br>
+**.NET Software Developer** @ [COMPENT.IO](http://compent.io/) _(Apr 2021 - Present)_<br>
 Software to support document workflow.
   - Designed parts of a new system and described decisions made in the designing process using Architecture Decision Records.
   - Implemented distributed system design patterns like inbox, outbox, observability.

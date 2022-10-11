@@ -19,8 +19,7 @@ Regular _(December 2019 - March 2021)_ <br>
 Junior _(June 2017 - December 2019)_ <br>
 
 Software to support network asset management for the utilities.<br>
-  - **_Technologies used:_** .NET Framework, C#, Windows Forms, ArcGIS SDK, Oracle,
-PL/SQL, WCF Services, .NET Core Web API
+  - **_Technologies used:_** .NET Framework, C#, Windows Forms, ArcGIS SDK, Oracle, PL/SQL, WCF Services, .NET Core Web API
 <br><br>
 
 **Data Entry Specialist** @ [Apator Rector](https://www.apator.com.pl/en/apator-group/apator-group-companies/apator-rector-sp-z-o-o) _(June 2015 - March 2017)_ <br>

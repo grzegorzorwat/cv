@@ -45,6 +45,7 @@ jobs:
           script-path: ${{ './.github/workflows/script.js' }}
           css-path: ${{ './.github/workflows/styles.css' }}
           media-type: 'Print'
+          paper-size: 'A4'
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4

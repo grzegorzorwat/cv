@@ -40,7 +40,7 @@ jobs:
           address: ${{ 'https://grzegorzorwat.github.io/cv/' }}
           output: ${{ './pdfs' }}
           file-name: ${{ 'cv.pdf' }}
-          append-metadata: true
+          append-metadata: false
           commit: ${{ steps.vars.outputs.sha_short }}
           script-path: ${{ './.github/workflows/script.js' }}
           css-path: ${{ './.github/workflows/styles.css' }}

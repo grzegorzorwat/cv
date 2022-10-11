@@ -38,7 +38,7 @@ jobs:
         uses: grzegorzorwat/GitHubActions.WebpageToPdf@main
         with:
           address: ${{ 'https://grzegorzorwat.github.io/cv/' }}
-          output: ${{ './pdfs' }}
+          output: ${{ './' }}
           file-name: ${{ 'cv.pdf' }}
           append-metadata: false
           commit: ${{ steps.vars.outputs.sha_short }}

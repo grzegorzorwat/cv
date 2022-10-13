@@ -94,8 +94,7 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
-          path: private-cv
+          token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
           title: '${{ steps.create-pdf.outputs.title }}'
           commit-message: 'Create PDF.'
           delete-branch: true
-          token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}

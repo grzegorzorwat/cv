@@ -99,4 +99,3 @@ jobs:
           commit-message: 'Create PDF.'
           delete-branch: true
           path: private-cv
-          repository: grzegorzorwat/private-cv

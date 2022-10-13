@@ -61,8 +61,15 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout cv repo
+        uses: actions/checkout@v3
         with: 
+          path: cv
+
+      - name: Checkout private cv repo
+        uses: actions/checkout@v3
+        with: 
+          path: private-cv
           repository: grzegorzorwat/private-cv
           token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
 
@@ -75,18 +82,19 @@ jobs:
         uses: grzegorzorwat/GitHubActions.WebpageToPdf@main
         with:
           address: ${{ 'https://grzegorzorwat.github.io/cv/' }}
-          output: ${{ './' }}
+          output: ${{ './private-cv' }}
           file-name: ${{ 'cv.pdf' }}
           append-metadata: false
           commit: ${{ steps.vars.outputs.sha_short }}
-          script-path: ${{ './.github/workflows/script.js' }}
-          css-path: ${{ './.github/workflows/styles.css' }}
+          script-path: ${{ './cv/.github/workflows/script.js' }}
+          css-path: ${{ './cv/.github/workflows/styles.css' }}
           media-type: 'Print'
           paper-format: 'A4'
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
+          path: private-cv
           title: '${{ steps.create-pdf.outputs.title }}'
           commit-message: 'Create PDF.'
           delete-branch: true

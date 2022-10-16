@@ -19,41 +19,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  generate:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set outputs
-        id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-
-      - name: Create PDF
-        id: create-pdf
-        uses: grzegorzorwat/GitHubActions.WebpageToPdf@main
-        with:
-          address: ${{ 'https://grzegorzorwat.github.io/cv/' }}
-          output: ${{ './' }}
-          file-name: ${{ 'cv.pdf' }}
-          append-metadata: false
-          commit: ${{ steps.vars.outputs.sha_short }}
-          script-path: ${{ './.github/workflows/script.js' }}
-          css-path: ${{ './.github/workflows/styles.css' }}
-          media-type: 'Print'
-          paper-format: 'A4'
-
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          title: '${{ steps.create-pdf.outputs.title }}'
-          commit-message: 'Create PDF.'
-          delete-branch: true
-  generate2:
+  generate-cv:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     permissions:
@@ -73,10 +39,6 @@ jobs:
           repository: grzegorzorwat/private-cv
           token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
 
-      - name: Set outputs
-        id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-
       - name: Create PDF
         id: create-pdf
         uses: grzegorzorwat/GitHubActions.WebpageToPdf@main
@@ -85,7 +47,6 @@ jobs:
           output: ${{ './private-cv' }}
           file-name: ${{ 'cv.pdf' }}
           append-metadata: false
-          commit: ${{ steps.vars.outputs.sha_short }}
           script-path: ${{ './cv/.github/workflows/script.js' }}
           css-path: ${{ './cv/.github/workflows/styles.css' }}
           media-type: 'Print'
